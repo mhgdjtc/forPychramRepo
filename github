@@ -1,0 +1,62 @@
+-Github hesabı oluşturulur.
+-Bir Repo(Repository) oluşturulur. ör: MyProject
+-	git remote add origin https://github.com/Username/MyProject.git
+komutu ile repository ye dosyalar yolu gösterilir.
+	git push -u origin main/master
+komutu ile linek verdiğimiz isim olan origin i main veya master sa o brancha  push edilir.
+-u flagi kullanımı zorunlu değil .-u flagi Kullanırsak aynı projedeki bir sonraki  push lar
+	git push
+yeterli olur.-u flagi kullanmazsak her seferinde origin
+	git push origin main yazmamız gerekir
+
+/*
+GitHub, 2020 yılından bu yana yeni oluşturulan repolarda varsayılan dal adını "main" olarak kullanmaya başladı, ancak bazı kullanıcılar hala "master" adını kullanabilir.
+Ana dalın adını değiştirmek için şu adımları izleyebilirsiniz:
+
+GitHub hesap ayarlarınızı değiştirin:
+
+GitHub hesabınıza giriş yapın.
+Sağ üst köşedeki profil fotoğrafınıza tıklayın ve "Settings" (Ayarlar) seçeneğini seçin.
+Sol menüden "Repositories" (Repolar) seçeneğine tıklayın.
+"Repository default branch" (Repo varsayılan dalı) bölümünde, "main" yazın veya tercih ettiğiniz dal adını girin.
+"Update" (Güncelle) düğmesine tıklayın.
+
+
+Mevcut bir reponun ana dalını değiştirin:
+
+İlgili repoya gidin.
+"Settings" (Ayarlar) sekmesine tıklayın.
+Sol menüden "Branches" (Dallar) seçeneğini bulun.
+"Default branch" (Varsayılan dal) bölümünde, açılır menüden yeni ana dal adını seçin veya yeni bir dal oluşturun.
+"Update" (Güncelle) düğmesine tıklayın ve değişikliği onaylayın.
+*/
+
+~~Pull ve Fetch
+-Github da repo nuza push atacak kişileri atayabilirsiniz.Repo>Settings>Collabators ile bu kişilere davet maili gönderebilir ve
+ kabul ettiklerinde ilgili reponuzda push(collabators üyelere) ve pull(public olan her repoya private olan collabators üyelerine) işlemleri yapabilir.
+
+ git clone https://github.com/Username/MyProject.git
+
+ -pull -> değişiklikleri direk projenize uygular. git pull
+ fetch -> değişiklikleri kontrol eder. varsa değişiklikler(push adetleri) gösterir. git fetch
+
+ ~~gitignore
+ bu dosyada belirtilen klasör veya dosyaların git ile takibini yapmayı bırakması
+	touch .gitignore
+komutu ile projeye gitignore dosyası eklenir.
+bu dosyayı açar ve bu dosyanın hizasındaki dosya/kalsör ü belirterek kaydederseniz artık dosya git de izlenmeyecektir.
+	git status
+komutu ile izlenmediğinizi görebilirsiniz. Sonra bu komutları takip ederek githuba'a atabilirsiniz.
+	git add .
+	git commit -m ".gitignore added"
+	git push origin main
+
+https://github.com/github/gitignore/blob/main/Python.gitignore bu linkten python projesi için gereksiz dosylar gitignore a dahil edilmiştir.
+
+
+~~~Ide lerde Git ve Github ile çalışma
+pycharm da VCS(Version Control System - Sürüm Kontrol Sistemi) menüsünden ile enable git yapıyoruz.
+	VCS> Enable Version Control Integration > Git
+
+Buradan sonra VCS menüsü seçtiğimiz version control systemi olan Git menüsü olur.
+Git menüsünden commit ve push işlemi yapabilirsinizs
